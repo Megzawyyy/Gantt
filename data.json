@@ -1,0 +1,42 @@
+{
+  "activeProjectId": "proj_scct_automation",
+  "projects": [
+    {
+      "id": "proj_scct_automation",
+      "title": "SCCT Control & Automation",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        { "id": "p_procurement", "name": "Procurement", "color": "#5b84b1" },
+        { "id": "p_preparations", "name": "Preparations", "color": "#679b69" },
+        { "id": "p_delivery", "name": "Delivery", "color": "#9d7db8" },
+        { "id": "p_engineering", "name": "Engineering", "color": "#d9824b" },
+        { "id": "p_closing", "name": "Closing", "color": "#c9514b" }
+      ],
+      "items": [
+        { "id": "it_1", "phaseId": "p_procurement", "type": "task", "title": "Panel Deal (DP to Infinity)", "assignee": "", "status": "planned", "amount": 0, "flowType": "outflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_2", "phaseId": "p_procurement", "type": "task", "title": "Instrumentation procurement", "assignee": "", "status": "planned", "amount": 0, "flowType": "outflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_3", "phaseId": "p_preparations", "type": "task", "title": "GUI Concept design", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_4", "phaseId": "p_preparations", "type": "task", "title": "PLC Software", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_5", "phaseId": "p_preparations", "type": "task", "title": "HMI Software", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_6", "phaseId": "p_preparations", "type": "task", "title": "SOO Confirmation", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_7", "phaseId": "p_preparations", "type": "task", "title": "Manufacture Shop Drawing Approval", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_8", "phaseId": "p_delivery", "type": "task", "title": "Panel Delivery", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_9", "phaseId": "p_delivery", "type": "task", "title": "Instrumentation Delivery", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_10", "phaseId": "p_delivery", "type": "task", "title": "SAT", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_11", "phaseId": "p_engineering", "type": "task", "title": "Cabling", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_12", "phaseId": "p_engineering", "type": "task", "title": "Loop Check", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_13", "phaseId": "p_engineering", "type": "task", "title": "Instrumentation Calibration", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_14", "phaseId": "p_engineering", "type": "task", "title": "PLC Commissioning", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_15", "phaseId": "p_engineering", "type": "task", "title": "HMI Commissioning", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_16", "phaseId": "p_closing", "type": "task", "title": "Guarantee", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_17", "phaseId": "p_closing", "type": "task", "title": "O&M", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_18", "phaseId": "p_closing", "type": "task", "title": "Training", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] },
+        { "id": "it_19", "phaseId": "p_closing", "type": "task", "title": "As-Built", "assignee": "", "status": "planned", "amount": 0, "flowType": "inflow", "color": "phase", "start": "2026-09-15", "end": "2026-09-26", "note": "", "dependsOn": [] }
+      ],
+      "milestones": []
+    }
+  ],
+  "savedAt": 0
+}
