@@ -45,8 +45,8 @@
           "amount": 3500,
           "flowType": "outflow",
           "color": "phase",
-          "start": "2026-09-15",
-          "end": "2026-09-26",
+          "start": "2026-09-20",
+          "end": "2026-10-01",
           "note": "",
           "dependsOn": []
         },
@@ -381,5 +381,6 @@
       ],
       "milestones": []
     }
-  ]
+  ],
+  "savedAt": 1789649228350
 }
