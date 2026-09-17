@@ -1154,7 +1154,7 @@
       </p>
       <div class="form-group">
         <label>GitHub Repository (owner/repo)</label>
-        <input type="text" id="ghRepoInput" placeholder="e.g. your-username/my-gantt">
+        <input type="text" id="ghRepoInput" placeholder="e.g. Megzawyyy/gantt-tracker" value="Megzawyyy/gantt-tracker">
       </div>
       <div class="form-group">
         <label>Branch</label>
@@ -1166,10 +1166,15 @@
       </div>
       <div class="form-group">
         <label>GitHub Personal Access Token (PAT)</label>
-        <input type="password" id="ghTokenInput" placeholder="ghp_... or github_pat_...">
-        <small style="font-size: 11px; color: var(--text-secondary); margin-top: 4px; display: block; line-height: 1.35;">
-          Needs <b>Contents: Read &amp; Write</b> permission on your repo. Token is saved only in this browser's local storage.
-        </small>
+        <input type="password" id="ghTokenInput" placeholder="ghp_...">
+        <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+          <a href="https://github.com/settings/tokens/new?description=Gantt+Sync&scopes=repo" target="_blank" rel="noopener noreferrer" style="color: #2b7a3e; font-size: 11.5px; font-weight: 600; text-decoration: underline;">
+            👉 1-Click: Generate your GitHub Token automatically
+          </a>
+          <small style="font-size: 11px; color: var(--text-secondary); line-height: 1.35;">
+            (Opens GitHub with <b>repo</b> scope pre-selected. Click "Generate token", copy the <code>ghp_...</code> code and paste it above).
+          </small>
+        </div>
       </div>
     </div>
     <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
