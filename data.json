@@ -3,10 +3,10 @@
   "projects": [
     {
       "id": "proj_scct_automation",
-      "title": "SCCT Sewage station",
+      "title": "SCCT Control & Automation",
       "startDate": "2026-08-03",
       "daysCount": 180,
-      "currency": "EUR",
+      "currency": "EGP",
       "phases": [
         {
           "id": "p_procurement",
@@ -38,25 +38,25 @@
         {
           "id": "it_1",
           "phaseId": "p_procurement",
-          "type": "payment",
+          "type": "task",
           "title": "Panel Deal (DP to Infinity)",
-          "assignee": "Infinity Electric",
+          "assignee": "",
           "status": "planned",
-          "amount": 3500,
+          "amount": 0,
           "flowType": "outflow",
           "color": "phase",
-          "start": "2026-09-14",
-          "end": "2026-09-25",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
         },
         {
           "id": "it_2",
           "phaseId": "p_procurement",
-          "type": "payment",
+          "type": "task",
           "title": "Instrumentation procurement",
           "assignee": "",
-          "status": "invoiced",
+          "status": "planned",
           "amount": 0,
           "flowType": "outflow",
           "color": "phase",
@@ -75,12 +75,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-22",
-          "end": "2026-11-02",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_6"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_4",
@@ -92,12 +90,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-06",
-          "end": "2026-10-17",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_6"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_5",
@@ -109,12 +105,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-06",
-          "end": "2026-10-17",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_6"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_6",
@@ -126,8 +120,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-09-16",
-          "end": "2026-09-19",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
         },
@@ -141,63 +135,55 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-09-28",
-          "end": "2026-10-01",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_1"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_8",
           "phaseId": "p_delivery",
           "type": "task",
           "title": "Panel Delivery",
-          "assignee": "ACS",
+          "assignee": "",
           "status": "planned",
-          "amount": 14000,
+          "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-21",
-          "end": "2026-11-01",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_1789469908941"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_9",
           "phaseId": "p_delivery",
           "type": "task",
           "title": "Instrumentation Delivery",
-          "assignee": "ACS",
+          "assignee": "",
           "status": "planned",
-          "amount": 1980.1,
+          "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-08",
-          "end": "2026-10-19",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_2"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_10",
           "phaseId": "p_delivery",
-          "type": "payment",
+          "type": "task",
           "title": "SAT",
           "assignee": "",
           "status": "planned",
-          "amount": 15980.1,
+          "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-02",
-          "end": "2026-12-02",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_8"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_11",
@@ -209,8 +195,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-03",
-          "end": "2026-10-07",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
         },
@@ -224,12 +210,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-08",
-          "end": "2026-10-12",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_11"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_13",
@@ -241,12 +225,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-02",
-          "end": "2026-11-10",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_11"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_14",
@@ -258,12 +240,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-02",
-          "end": "2026-11-13",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_12"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_15",
@@ -275,12 +255,10 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-02",
-          "end": "2026-11-13",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
-          "dependsOn": [
-            "it_12"
-          ]
+          "dependsOn": []
         },
         {
           "id": "it_16",
@@ -292,8 +270,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-15",
-          "end": "2026-11-26",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
         },
@@ -307,8 +285,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-15",
-          "end": "2026-11-26",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
         },
@@ -322,8 +300,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-15",
-          "end": "2026-11-26",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
         },
@@ -337,50 +315,14 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-15",
-          "end": "2026-11-26",
+          "start": "2026-09-15",
+          "end": "2026-09-26",
           "note": "",
           "dependsOn": []
-        },
-        {
-          "id": "it_1789469908941",
-          "phaseId": "p_preparations",
-          "type": "payment",
-          "title": "FAT",
-          "assignee": "Infinity Electric",
-          "status": "planned",
-          "amount": 3500,
-          "flowType": "outflow",
-          "color": "phase",
-          "start": "2026-10-12",
-          "end": "2026-10-19",
-          "note": "",
-          "dependsOn": [
-            "it_7",
-            "it_1789469971363"
-          ]
-        },
-        {
-          "id": "it_1789469971363",
-          "phaseId": "p_engineering",
-          "type": "task",
-          "title": "Panel Building",
-          "assignee": "Infinity Electric",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-03",
-          "end": "2026-10-10",
-          "note": "",
-          "dependsOn": [
-            "it_1",
-            "it_7"
-          ]
         }
       ],
       "milestones": []
     }
   ],
-  "savedAt": 1789649328425
+  "savedAt": 1789889803552
 }
