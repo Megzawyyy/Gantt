@@ -45,8 +45,8 @@
           "amount": 0,
           "flowType": "outflow",
           "color": "phase",
-          "start": "2026-09-15",
-          "end": "2026-09-26",
+          "start": "2026-09-18",
+          "end": "2026-09-29",
           "note": "",
           "dependsOn": []
         },
@@ -324,5 +324,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1789889803552
+  "savedAt": 1789890236727
 }
