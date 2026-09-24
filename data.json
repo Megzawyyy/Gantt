@@ -57,7 +57,7 @@
           "title": "Instrumentation procurement",
           "assignee": "",
           "status": "planned",
-          "amount": 3500,
+          "amount": 1800,
           "flowType": "outflow",
           "color": "phase",
           "start": "2026-09-15",
@@ -398,5 +398,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1790241957876
+  "savedAt": 1790241969272
 }
