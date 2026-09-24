@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_scct_automation",
+  "activeProjectId": "proj_1790245543932",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -396,7 +396,23 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1790245543932",
+      "title": "Zed East",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1790245543932",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1790242000021
+  "savedAt": 1790245543931
 }
