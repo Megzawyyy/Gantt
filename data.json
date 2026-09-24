@@ -56,7 +56,7 @@
           "type": "payment",
           "title": "Instrumentation procurement",
           "assignee": "",
-          "status": "invoiced",
+          "status": "planned",
           "amount": 3500,
           "flowType": "outflow",
           "color": "phase",
@@ -398,5 +398,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1790241914914
+  "savedAt": 1790241947924
 }
