@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_scct_automation",
+  "activeProjectId": "proj_1790241270438",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -380,7 +380,23 @@
         }
       ],
       "milestones": []
+    },
+    {
+      "id": "proj_1790241270438",
+      "title": "SCCT RMU",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1790241270438",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1789890313957
+  "savedAt": 1790241270438
 }
