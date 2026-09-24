@@ -192,8 +192,8 @@
           "amount": 15980.1,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-11-12",
-          "end": "2026-12-12",
+          "start": "2026-11-03",
+          "end": "2026-12-03",
           "note": "",
           "dependsOn": [
             "it_8"
@@ -398,5 +398,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1790241454179
+  "savedAt": 1790241456449
 }
