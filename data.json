@@ -6,7 +6,7 @@
       "title": "SCCT Sewage station",
       "startDate": "2026-08-03",
       "daysCount": 180,
-      "currency": "EUR",
+      "currency": "USD",
       "phases": [
         {
           "id": "p_procurement",
@@ -398,5 +398,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1790241969272
+  "savedAt": 1790242000021
 }
