@@ -382,14 +382,14 @@
           "id": "it_1790246226373",
           "phaseId": "p_engineering",
           "type": "task",
-          "title": "New Task",
+          "title": "SOP preparation",
           "assignee": "",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-09-16",
-          "end": "2026-09-23",
+          "start": "2026-09-27",
+          "end": "2026-10-01",
           "note": "",
           "dependsOn": []
         }
@@ -429,5 +429,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1790246226373
+  "savedAt": 1790246251560
 }
