@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1790245543932",
+  "activeProjectId": "proj_1791796116574",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -431,7 +431,39 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1791796104555",
+      "title": "Golden Gate",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796104555",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
+    },
+    {
+      "id": "proj_1791796116574",
+      "title": "Sodic VYE",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796116574",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1791796062815
+  "savedAt": 1791796116574
 }
