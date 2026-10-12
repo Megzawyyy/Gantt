@@ -440,7 +440,14 @@
           "dependsOn": []
         }
       ],
-      "milestones": []
+      "milestones": [
+        {
+          "id": "m_1791796909494",
+          "label": "Mile",
+          "date": "2026-10-12",
+          "color": "#d9824b"
+        }
+      ]
     },
     {
       "id": "proj_1790245543932",
@@ -667,5 +674,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791796893737
+  "savedAt": 1791796909494
 }
