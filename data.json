@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1791796134235",
+  "activeProjectId": "proj_1791796148613",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -516,7 +516,8 @@
         }
       ],
       "items": [],
-      "milestones": []
+      "milestones": [],
+      "projectType": "aveva-plc"
     },
     {
       "id": "proj_1791796148613",
@@ -663,5 +664,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791797626171
+  "savedAt": 1791797631714
 }
