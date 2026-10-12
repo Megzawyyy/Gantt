@@ -1422,8 +1422,8 @@ const defaultData = {
         { id: "it_1", phaseId: "p_procurement", type: "task", title: "Panel Deal (DP to Infinity)", assignee: "", status: "planned", amount: 0, flowType: "outflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_2", phaseId: "p_procurement", type: "task", title: "Instrumentation procurement", assignee: "", status: "planned", amount: 0, flowType: "outflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_3", phaseId: "p_preparations", type: "task", title: "GUI Concept design", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
-        { id: "it_4", phaseId: "p_preparations", type: "task", title: "PLC Software", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
-        { id: "it_5", phaseId: "p_preparations", type: "task", title: "HMI Software", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
+        { id: "it_4", phaseId: "p_preparations", type: "task", title: "PLC Software", assignee: "", status: "in progress", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
+        { id: "it_5", phaseId: "p_preparations", type: "task", title: "HMI Software", assignee: "", status: "done", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_6", phaseId: "p_preparations", type: "task", title: "SOO Confirmation", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_7", phaseId: "p_preparations", type: "task", title: "Manufacture Shop Drawing Approval", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_8", phaseId: "p_delivery", type: "task", title: "Panel Delivery", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
@@ -1437,7 +1437,7 @@ const defaultData = {
         { id: "it_16", phaseId: "p_closing", type: "task", title: "Guarantee", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_17", phaseId: "p_closing", type: "task", title: "O&M", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
         { id: "it_18", phaseId: "p_closing", type: "task", title: "Training", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] },
-        { id: "it_19", phaseId: "p_closing", type: "task", title: "As-Built", assignee: "", status: "planned", amount: 0, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-26", note: "", dependsOn: [] }
+        { id: "it_19", phaseId: "p_closing", type: "payment", title: "Initial Payment", assignee: "", status: "invoiced", amount: 50000, flowType: "inflow", color: "phase", start: "2026-09-15", end: "2026-09-18", note: "", dependsOn: [] }
       ],
       milestones: []
     }
@@ -1465,6 +1465,32 @@ function pickInitialStore() {
 let store = pickInitialStore();
 const undoStack = [];
 const redoStack = [];
+
+// Status Text Display Helper
+function getStatusDisplay(item) {
+  if (item.type === 'payment') {
+    if (item.status === 'paid') return '✔️ Paid';
+    if (item.status === 'invoiced') return '🧾 Invoiced / Due';
+    return '📅 Planned';
+  } else {
+    if (item.status === 'done') return '✅ Done';
+    if (item.status === 'in progress') return '⏳ In Progress';
+    return '🗓️ Planned';
+  }
+}
+
+// Status Icon Display Helper
+function getStatusIconOnly(item) {
+  if (item.type === 'payment') {
+    if (item.status === 'paid') return '✔️';
+    if (item.status === 'invoiced') return '🧾';
+    return '📅';
+  } else {
+    if (item.status === 'done') return '✅';
+    if (item.status === 'in progress') return '⏳';
+    return '🗓️';
+  }
+}
 
 function getCurrentProject() {
   let p = store.projects.find(x => x.id === store.activeProjectId);
@@ -2366,16 +2392,18 @@ function renderTasksAndGrid(project) {
       bar.style.width = `${width}px`;
       bar.style.top = `${top}px`;
 
+      const statusIcon = getStatusIconOnly(item);
+
       if (item.type === 'payment') {
         bar.style.backgroundColor = item.flowType === 'inflow' ? '#3d7a4c' : '#a83c3c';
         const sign = item.flowType === 'outflow' ? '(-)' : '(+)';
         bar.innerHTML = `
-          <span style="overflow:hidden; text-overflow:ellipsis;">💵 ${item.title}</span>
+          <span style="overflow:hidden; text-overflow:ellipsis;">${statusIcon} 💵 ${item.title}</span>
           <span class="cash-badge">${sign} ${formatCurrency(item.amount, curr)}</span>
         `;
       } else {
         bar.style.backgroundColor = item.color === 'phase' ? phase.color : item.color;
-        bar.textContent = item.title;
+        bar.innerHTML = `<span style="overflow:hidden; text-overflow:ellipsis;">${statusIcon} ${item.title}</span>`;
       }
 
       attachItemInteractions(bar, item, project);
@@ -3076,23 +3104,60 @@ function renderPhaseOverviewList() {
 
   const items = p.items.filter(t => t.phaseId === activeOverviewPhaseId);
 
-  items.forEach(t => {
+  items.forEach((t, index) => {
     const div = document.createElement('div');
     div.className = 'task-list-item';
     const isPayment = t.type === 'payment';
+    
     div.innerHTML = `
-      <div style="flex-grow: 1;">
-        <div class="task-list-title">
+      <div style="display: flex; align-items: center; gap: 6px; padding-right: 8px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <button class="icon-btn move-up-i-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === 0 ? '0.2' : '0.7'}; pointer-events: ${index === 0 ? 'none' : 'auto'};" title="Move Up">▲</button>
+          <button class="icon-btn move-down-i-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === items.length - 1 ? '0.2' : '0.7'}; pointer-events: ${index === items.length - 1 ? 'none' : 'auto'};" title="Move Down">▼</button>
+        </div>
+      </div>
+      <div style="flex-grow: 1; min-width: 0;">
+        <div class="task-list-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
           ${isPayment ? '💵' : '📋'} ${t.title} 
           ${isPayment ? `· <span style="color:#2b7a3e;">${formatCurrency(t.amount, curr)}</span>` : ''}
         </div>
-        <div class="task-list-sub">${t.status} · ${t.start} — ${t.end}</div>
+        <div class="task-list-sub" style="display:flex; gap:6px; align-items:center;">
+          <span style="background: #f0eee9; padding: 2px 4px; border-radius: 4px; font-weight: 600; color: #524c43;">${getStatusDisplay(t)}</span>
+          <span>${t.start} — ${t.end}</span>
+        </div>
       </div>
-      <div style="display: flex; gap: 4px;">
+      <div style="display: flex; gap: 4px; flex-shrink: 0;">
         <button class="icon-btn edit-btn" title="Edit">✎</button>
         <button class="icon-btn del-btn" title="Delete">✕</button>
       </div>
     `;
+
+    // Reorder Logic
+    div.querySelector('.move-up-i-btn').onclick = (e) => {
+      e.stopPropagation();
+      if (index > 0) {
+        recordState();
+        const prevId = items[index - 1].id;
+        const globalIdx1 = p.items.findIndex(x => x.id === t.id);
+        const globalIdx2 = p.items.findIndex(x => x.id === prevId);
+        [p.items[globalIdx1], p.items[globalIdx2]] = [p.items[globalIdx2], p.items[globalIdx1]];
+        renderPhaseOverviewList();
+        renderAll(true);
+      }
+    };
+
+    div.querySelector('.move-down-i-btn').onclick = (e) => {
+      e.stopPropagation();
+      if (index < items.length - 1) {
+        recordState();
+        const nextId = items[index + 1].id;
+        const globalIdx1 = p.items.findIndex(x => x.id === t.id);
+        const globalIdx2 = p.items.findIndex(x => x.id === nextId);
+        [p.items[globalIdx1], p.items[globalIdx2]] = [p.items[globalIdx2], p.items[globalIdx1]];
+        renderPhaseOverviewList();
+        renderAll(true);
+      }
+    };
 
     div.querySelector('.edit-btn').onclick = (e) => { e.stopPropagation(); openEditItemModal(t.id); };
     div.querySelector('.del-btn').onclick = (e) => {
