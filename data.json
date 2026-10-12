@@ -3,7 +3,7 @@
   "projects": [
     {
       "id": "proj_scct_automation",
-      "title": "SCCT Sewage station",
+      "title": "SCCT SEW",
       "startDate": "2026-08-26",
       "daysCount": 180,
       "currency": "USD",
@@ -673,5 +673,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791798375345
+  "savedAt": 1791798390352
 }
