@@ -448,7 +448,8 @@
         }
       ],
       "items": [],
-      "milestones": []
+      "milestones": [],
+      "projectType": "aveva-plc"
     },
     {
       "id": "proj_1791796104555",
@@ -659,5 +660,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791797568115
+  "savedAt": 1791797572244
 }
