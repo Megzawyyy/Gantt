@@ -560,6 +560,21 @@
           "dependsOn": []
         },
         {
+          "id": "it_1791801819588",
+          "phaseId": "p_1791801346901",
+          "type": "task",
+          "title": "As-Built",
+          "assignee": "ACS",
+          "status": "planned",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-16",
+          "end": "2026-10-23",
+          "note": "",
+          "dependsOn": []
+        },
+        {
           "id": "it_1791801738454",
           "phaseId": "p_1791801346901",
           "type": "task",
@@ -579,21 +594,6 @@
           "phaseId": "p_1791801346901",
           "type": "task",
           "title": "Training",
-          "assignee": "ACS",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-16",
-          "end": "2026-10-23",
-          "note": "",
-          "dependsOn": []
-        },
-        {
-          "id": "it_1791801819588",
-          "phaseId": "p_1791801346901",
-          "type": "task",
-          "title": "As-Built",
           "assignee": "ACS",
           "status": "planned",
           "amount": 0,
@@ -875,5 +875,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791802606301
+  "savedAt": 1791802627229
 }
