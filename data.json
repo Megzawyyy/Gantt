@@ -109,8 +109,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-11",
-          "end": "2026-10-22",
+          "start": "2026-10-29",
+          "end": "2026-11-09",
           "note": "",
           "dependsOn": [
             "it_6"
@@ -673,5 +673,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791800654015
+  "savedAt": 1791800657438
 }
