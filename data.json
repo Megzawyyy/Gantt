@@ -402,23 +402,6 @@
       "projectType": "plc"
     },
     {
-      "id": "proj_1790245543932",
-      "title": "Zed East",
-      "startDate": "2026-08-03",
-      "daysCount": 180,
-      "currency": "EGP",
-      "phases": [
-        {
-          "id": "p_1790245543932",
-          "name": "Phase 1",
-          "color": "#6c8ebf"
-        }
-      ],
-      "items": [],
-      "milestones": [],
-      "projectType": "plc"
-    },
-    {
       "id": "proj_1790241270438",
       "title": "SCCT RMU",
       "startDate": "2026-07-24",
@@ -448,6 +431,23 @@
           "dependsOn": []
         }
       ],
+      "milestones": [],
+      "projectType": "plc"
+    },
+    {
+      "id": "proj_1790245543932",
+      "title": "Zed East",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1790245543932",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
       "milestones": [],
       "projectType": "plc"
     },
@@ -673,5 +673,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791798360752
+  "savedAt": 1791798363076
 }
