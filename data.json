@@ -593,14 +593,14 @@
           "id": "it_1791801819588",
           "phaseId": "p_1791801346901",
           "type": "task",
-          "title": "New Task",
-          "assignee": "",
+          "title": "As-Built",
+          "assignee": "ACS",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-09-16",
-          "end": "2026-09-23",
+          "start": "2026-10-16",
+          "end": "2026-10-23",
           "note": "",
           "dependsOn": []
         }
@@ -830,5 +830,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801819588
+  "savedAt": 1791801836049
 }
