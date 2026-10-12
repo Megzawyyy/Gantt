@@ -549,7 +549,7 @@
           "phaseId": "p_1791801346901",
           "type": "task",
           "title": "Guarantee",
-          "assignee": "",
+          "assignee": "ACS",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -830,5 +830,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801843760
+  "savedAt": 1791801846753
 }
