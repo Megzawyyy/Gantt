@@ -417,6 +417,11 @@
           "id": "p_1791801346901",
           "name": "Closing",
           "color": "#82a86d"
+        },
+        {
+          "id": "p_1791802675996",
+          "name": "New Phase",
+          "color": "#9d7db8"
         }
       ],
       "items": [
@@ -875,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791802666771
+  "savedAt": 1791802675996
 }
