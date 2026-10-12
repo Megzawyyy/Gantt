@@ -432,7 +432,7 @@
         }
       ],
       "milestones": [],
-      "projectType": "plc"
+      "projectType": "general"
     },
     {
       "id": "proj_1790245543932",
@@ -660,5 +660,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791797579778
+  "savedAt": 1791797582619
 }
