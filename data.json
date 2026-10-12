@@ -669,8 +669,9 @@
         }
       ],
       "items": [],
-      "milestones": []
+      "milestones": [],
+      "projectType": "aveva"
     }
   ],
-  "savedAt": 1791797670915
+  "savedAt": 1791797674080
 }
