@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1791796168121",
+  "activeProjectId": "proj_1791796172500",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -559,7 +559,23 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1791796172500",
+      "title": "SCCT PH3",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796172500",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1791796168121
+  "savedAt": 1791796172500
 }
