@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1791796134235",
+  "activeProjectId": "proj_1791796148613",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -495,7 +495,23 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1791796148613",
+      "title": "Silver Sand",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796148613",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1791796134235
+  "savedAt": 1791796148613
 }
