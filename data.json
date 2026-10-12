@@ -427,7 +427,7 @@
       "phases": [
         {
           "id": "p_1790245543932",
-          "name": "Phase 1",
+          "name": "Panels Delivery",
           "color": "#6c8ebf"
         }
       ],
@@ -657,5 +657,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801285040
+  "savedAt": 1791801299001
 }
