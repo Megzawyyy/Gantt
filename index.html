@@ -146,7 +146,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 120px; /* Reduced slightly to fit the new button */
+    max-width: 105px;
   }
 
   /* Main Area */
@@ -2068,7 +2068,7 @@ function renderProjectsList() {
   const list = document.getElementById('projectsList');
   list.innerHTML = '';
 
-  store.projects.forEach(p => {
+  store.projects.forEach((p, index) => {
     // Check custom type or fallback to general
     const pType = p.projectType || 'general';
     const customClass = pType !== 'general' ? `proj-${pType}` : '';
@@ -2076,8 +2076,15 @@ function renderProjectsList() {
     const item = document.createElement('div');
     item.className = `project-item ${p.id === store.activeProjectId ? 'active' : ''} ${customClass}`;
     
+    // Using simple HTML up/down buttons on the far left that are safe for all devices.
     item.innerHTML = `
-      <span class="project-item-title">${p.title}</span>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <button class="icon-btn move-up-p-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === 0 ? '0' : '0.6'}; pointer-events: ${index === 0 ? 'none' : 'auto'};" title="Move Up">▲</button>
+          <button class="icon-btn move-down-p-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === store.projects.length - 1 ? '0' : '0.6'}; pointer-events: ${index === store.projects.length - 1 ? 'none' : 'auto'};" title="Move Down">▼</button>
+        </div>
+        <span class="project-item-title" title="${p.title}">${p.title}</span>
+      </div>
       <div style="display: flex; gap: 2px;">
         <button class="icon-btn type-p-btn" title="Set Project Type">🏷️</button>
         <button class="icon-btn edit-p-btn" title="Rename Project">✎</button>
@@ -2090,6 +2097,29 @@ function renderProjectsList() {
         store.activeProjectId = p.id;
         saveToLocalStorage();
         renderAll(false);
+      }
+    };
+
+    // Movement Logic
+    item.querySelector('.move-up-p-btn').onclick = (e) => {
+      e.stopPropagation();
+      if (index > 0) {
+        recordState();
+        const temp = store.projects[index - 1];
+        store.projects[index - 1] = store.projects[index];
+        store.projects[index] = temp;
+        renderAll(true);
+      }
+    };
+
+    item.querySelector('.move-down-p-btn').onclick = (e) => {
+      e.stopPropagation();
+      if (index < store.projects.length - 1) {
+        recordState();
+        const temp = store.projects[index + 1];
+        store.projects[index + 1] = store.projects[index];
+        store.projects[index] = temp;
+        renderAll(true);
       }
     };
 
