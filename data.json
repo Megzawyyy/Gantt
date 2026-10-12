@@ -434,6 +434,36 @@
           "id": "p_1791801346901",
           "name": "Closing",
           "color": "#82a86d"
+        },
+        {
+          "id": "p_1791801773784",
+          "name": "New Phase",
+          "color": "#9d7db8"
+        },
+        {
+          "id": "p_1791801775821",
+          "name": "New Phase",
+          "color": "#d9824b"
+        },
+        {
+          "id": "p_1791801777241",
+          "name": "New Phase",
+          "color": "#c9514b"
+        },
+        {
+          "id": "p_1791801779061",
+          "name": "New Phase",
+          "color": "#6c8ebf"
+        },
+        {
+          "id": "p_1791801780938",
+          "name": "New Phase",
+          "color": "#82a86d"
+        },
+        {
+          "id": "p_1791801782895",
+          "name": "New Phase",
+          "color": "#9d7db8"
         }
       ],
       "items": [
@@ -800,5 +830,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801768335
+  "savedAt": 1791801782895
 }
