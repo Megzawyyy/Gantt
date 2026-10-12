@@ -2447,7 +2447,7 @@ function renderDependencyLinks(project) {
 }
 
 function updateTodayMarker(project) {
-  const todayStr = "2026-09-28";
+  const todayStr = formatDate(new Date());
   const diff = getDayDiff(project.startDate, todayStr);
   const line = document.getElementById('todayLine');
   if (diff >= 0 && diff < project.daysCount) {
@@ -2461,7 +2461,8 @@ function updateTodayMarker(project) {
 // Navigation Buttons
 document.getElementById('todayBtn').onclick = () => {
   const p = getCurrentProject();
-  const diff = getDayDiff(p.startDate, "2026-09-28");
+  const todayStr = formatDate(new Date());
+  const diff = getDayDiff(p.startDate, todayStr);
   timelinePanel.scrollTo({
     left: Math.max(0, diff * DAY_WIDTH - 200),
     behavior: 'smooth'
