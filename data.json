@@ -469,6 +469,23 @@
       "projectType": "plc"
     },
     {
+      "id": "proj_1791796154138",
+      "title": "PS02",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796154138",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": [],
+      "projectType": "plc"
+    },
+    {
       "id": "proj_1791796104555",
       "title": "Golden Gate",
       "startDate": "2026-08-03",
@@ -518,23 +535,6 @@
       "items": [],
       "milestones": [],
       "projectType": "aveva-plc"
-    },
-    {
-      "id": "proj_1791796154138",
-      "title": "PS02",
-      "startDate": "2026-08-03",
-      "daysCount": 180,
-      "currency": "EGP",
-      "phases": [
-        {
-          "id": "p_1791796154138",
-          "name": "Phase 1",
-          "color": "#6c8ebf"
-        }
-      ],
-      "items": [],
-      "milestones": [],
-      "projectType": "plc"
     },
     {
       "id": "proj_1791796134235",
@@ -673,5 +673,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791799051087
+  "savedAt": 1791799055036
 }
