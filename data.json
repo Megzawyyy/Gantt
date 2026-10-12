@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1791796116574",
+  "activeProjectId": "proj_1791796134235",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -463,7 +463,39 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1791796128415",
+      "title": "Safaga Port",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796128415",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
+    },
+    {
+      "id": "proj_1791796134235",
+      "title": "Soul",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796134235",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1791796116574
+  "savedAt": 1791796134235
 }
