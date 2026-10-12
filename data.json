@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1790241270438",
+  "activeProjectId": "proj_1790245543932",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -432,7 +432,7 @@
         }
       ],
       "milestones": [],
-      "projectType": "general"
+      "projectType": "plc"
     },
     {
       "id": "proj_1790245543932",
@@ -660,5 +660,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791797588170
+  "savedAt": 1791797594860
 }
