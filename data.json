@@ -429,6 +429,11 @@
           "id": "p_1790245543932",
           "name": "Engineering",
           "color": "#6c8ebf"
+        },
+        {
+          "id": "p_1791801346901",
+          "name": "Closing",
+          "color": "#82a86d"
         }
       ],
       "items": [],
@@ -657,5 +662,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801337699
+  "savedAt": 1791801346901
 }
