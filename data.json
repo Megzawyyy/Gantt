@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1791796219529",
+  "activeProjectId": "proj_1791796234445",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -591,7 +591,39 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1791796227551",
+      "title": "Helio",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796227551",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
+    },
+    {
+      "id": "proj_1791796234445",
+      "title": "MTTS",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796234445",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1791796219529
+  "savedAt": 1791796234445
 }
