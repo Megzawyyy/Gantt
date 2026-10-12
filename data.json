@@ -402,23 +402,6 @@
       "projectType": "plc"
     },
     {
-      "id": "proj_1790241270438",
-      "title": "SCCT RMU",
-      "startDate": "2026-07-24",
-      "daysCount": 180,
-      "currency": "EGP",
-      "phases": [
-        {
-          "id": "p_1790241270438",
-          "name": "Phase 1",
-          "color": "#6c8ebf"
-        }
-      ],
-      "items": [],
-      "milestones": [],
-      "projectType": "plc"
-    },
-    {
       "id": "proj_1790245543932",
       "title": "Zed East",
       "startDate": "2026-08-03",
@@ -434,6 +417,11 @@
           "id": "p_1791801346901",
           "name": "Closing",
           "color": "#82a86d"
+        },
+        {
+          "id": "p_1791802647710",
+          "name": "New Phase",
+          "color": "#9d7db8"
         }
       ],
       "items": [
@@ -560,10 +548,10 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791801819588",
+          "id": "it_1791801738454",
           "phaseId": "p_1791801346901",
           "type": "task",
-          "title": "As-Built",
+          "title": "O&M",
           "assignee": "ACS",
           "status": "planned",
           "amount": 0,
@@ -575,10 +563,10 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791801738454",
+          "id": "it_1791801819588",
           "phaseId": "p_1791801346901",
           "type": "task",
-          "title": "O&M",
+          "title": "As-Built",
           "assignee": "ACS",
           "status": "planned",
           "amount": 0,
@@ -650,6 +638,23 @@
           "dependsOn": []
         }
       ],
+      "milestones": [],
+      "projectType": "plc"
+    },
+    {
+      "id": "proj_1790241270438",
+      "title": "SCCT RMU",
+      "startDate": "2026-07-24",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1790241270438",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
       "milestones": [],
       "projectType": "plc"
     },
@@ -875,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791802627229
+  "savedAt": 1791802647710
 }
