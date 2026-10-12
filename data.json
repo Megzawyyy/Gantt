@@ -411,43 +411,10 @@
           "id": "p_1790241270438",
           "name": "Phase 1",
           "color": "#6c8ebf"
-        },
-        {
-          "id": "p_1791796891785",
-          "name": "New Phase",
-          "color": "#82a86d"
-        },
-        {
-          "id": "p_1791796893738",
-          "name": "New Phase",
-          "color": "#9d7db8"
         }
       ],
-      "items": [
-        {
-          "id": "it_1791796852481",
-          "phaseId": "p_1790241270438",
-          "type": "task",
-          "title": "New Task",
-          "assignee": "",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-12",
-          "end": "2026-10-19",
-          "note": "",
-          "dependsOn": []
-        }
-      ],
-      "milestones": [
-        {
-          "id": "m_1791796909494",
-          "label": "Mile",
-          "date": "2026-10-12",
-          "color": "#d9824b"
-        }
-      ]
+      "items": [],
+      "milestones": []
     },
     {
       "id": "proj_1790245543932",
@@ -674,5 +641,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791796909494
+  "savedAt": 1791796933666
 }
