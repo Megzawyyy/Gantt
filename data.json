@@ -534,7 +534,7 @@
           "phaseId": "p_1790245543932",
           "type": "task",
           "title": "HMI Commissioning",
-          "assignee": "",
+          "assignee": "ACS",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -830,5 +830,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801846753
+  "savedAt": 1791801851841
 }
