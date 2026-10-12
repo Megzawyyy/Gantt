@@ -1044,6 +1044,7 @@
 
         <div class="nav-controls">
           <button id="criticalPathBtn" class="cp-toggle-btn" title="Highlight the longest dependency chain that drives the project's total duration">🎯 Critical Path</button>
+          <button id="openShiftModalBtn" title="Shift entire timeline forward or backward">↔ Shift All</button>
           <span id="criticalPathInfo" class="cp-info-badge"></span>
         </div>
       </div>
@@ -1332,6 +1333,29 @@
   </div>
 </div>
 
+<!-- SHIFT TIMELINE MODAL -->
+<div class="modal-overlay" id="shiftModal">
+  <div class="modal-card" style="width: 340px;">
+    <div class="modal-header">
+      <h4><span>↔</span> Shift Entire Timeline</h4>
+      <button class="close-btn" onclick="closeModals()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.4;">
+        Move all tasks, payments, milestones, and the overall project start date forward or backward by a specific number of days.
+      </p>
+      <div class="form-group">
+        <label>Days to shift (e.g., 7 for next week, -3 for earlier)</label>
+        <input type="number" id="shiftDaysInput" value="0" placeholder="0">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button onclick="closeModals()">Cancel</button>
+      <button class="btn-primary" id="applyShiftBtn">Apply Shift</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // State Schema
 const defaultData = {
@@ -1377,11 +1401,6 @@ const defaultData = {
 };
 
 // ---- Embedded data (this is what makes the file itself portable) ----
-// When you click "Save to File", the app downloads an updated copy of this
-// HTML file with your current data baked into the block below, replacing
-// EMBEDDED_STORE. Re-upload that file to Cloudflare (overwriting the old
-// one) and every device that opens it will load your latest data straight
-// from the file - no server or database needed.
 const EMBEDDED_STORE = /*__EMBEDDED_STORE_START__*/null/*__EMBEDDED_STORE_END__*/;
 
 const STORAGE_KEY = 'unified_gantt_cad_jump_v8_strict';
@@ -1393,11 +1412,6 @@ function pickInitialStore() {
   const embeddedTime = (EMBEDDED_STORE && EMBEDDED_STORE.savedAt) || 0;
   const localTime = (localStore && localStore.savedAt) || 0;
 
-  // Prefer whichever copy of the data was saved most recently: the data
-  // baked into this file, or the data saved in this browser's storage.
-  // This way, opening a freshly re-uploaded file always shows the newest
-  // synced data, while unsaved edits made only in this browser are never
-  // silently lost.
   if (EMBEDDED_STORE && embeddedTime >= localTime) return JSON.parse(JSON.stringify(EMBEDDED_STORE));
   if (localStore) return localStore;
   if (EMBEDDED_STORE) return JSON.parse(JSON.stringify(EMBEDDED_STORE));
@@ -1455,10 +1469,6 @@ function saveToLocalStorage() {
 }
 
 // ---- GitHub & Cloud Sync Engine ----
-// Syncs your workspace automatically with your GitHub repository.
-// Every edit in Chrome is committed to data.json directly via GitHub REST API.
-// 100% free with no Cloudflare or server hosting required.
-
 let githubFileSha = null;
 let pushTimer = null;
 let isPushing = false;
@@ -1612,7 +1622,6 @@ async function pushToGitHub(manual = false) {
     });
 
     if (res.status === 409) {
-      // Conflict: fetch fresh sha and retry
       const refRes = await fetch(`https://api.github.com/repos/${cfg.repo}/contents/${cfg.path}?ref=${encodeURIComponent(cfg.branch)}&_t=${Date.now()}`, {
         headers: { 'Authorization': `Bearer ${cfg.token}`, 'Accept': 'application/vnd.github.v3+json' },
         cache: 'no-store'
@@ -1656,7 +1665,6 @@ async function pushToGitHub(manual = false) {
   }
 }
 
-// Fallback to Cloudflare if configured
 function getCloudflareEndpoint() {
   const custom = (localStorage.getItem('ganttCloudUrl') || '').trim();
   if (custom) return custom.replace(/\/+$/, '') + '/api/data';
@@ -2725,7 +2733,7 @@ function attachItemInteractions(el, item, project) {
 }
 
 // ==========================================
-// --- MODALS (PHASE, ITEM, MILESTONE) ---
+// --- MODALS (PHASE, ITEM, MILESTONE, SHIFT) ---
 // ==========================================
 document.getElementById('addNewPhaseBtn').onclick = () => {
   const name = prompt('New Phase Name:', 'New Phase');
@@ -2996,7 +3004,7 @@ document.getElementById('addMilestoneBtn').onclick = () => {
   closeModals();
   activeMilestoneId = null;
   document.getElementById('milestoneLabel').value = '';
-  document.getElementById('milestoneDate').value = '2026-10-19';
+  document.getElementById('milestoneDate').value = formatDate(new Date());
   document.getElementById('milestoneColor').value = '#d9824b';
   document.getElementById('deleteMilestoneBtn').style.display = 'none';
   document.getElementById('milestoneModal').classList.add('active');
@@ -3047,13 +3055,57 @@ document.getElementById('deleteMilestoneBtn').onclick = () => {
   renderAll(true);
 };
 
+// ==========================================
+// --- SHIFT ENTIRE TIMELINE CONTROLS ---
+// ==========================================
+document.getElementById('openShiftModalBtn').onclick = () => {
+  closeModals();
+  document.getElementById('shiftDaysInput').value = 0;
+  document.getElementById('shiftModal').classList.add('active');
+};
+
+function addDaysToDateStr(dateStr, days) {
+  if (!dateStr) return dateStr;
+  const d = parseDate(dateStr);
+  d.setDate(d.getDate() + days);
+  return formatDate(d);
+}
+
+document.getElementById('applyShiftBtn').onclick = () => {
+  const days = parseInt(document.getElementById('shiftDaysInput').value, 10);
+  if (isNaN(days) || days === 0) {
+    closeModals();
+    return;
+  }
+
+  const p = getCurrentProject();
+  if (!p) return;
+
+  recordState();
+
+  // Shift project overall start date
+  p.startDate = addDaysToDateStr(p.startDate, days);
+
+  // Shift all tasks and payments
+  (p.items || []).forEach(item => {
+    item.start = addDaysToDateStr(item.start, days);
+    item.end = addDaysToDateStr(item.end, days);
+  });
+
+  // Shift all milestones
+  (p.milestones || []).forEach(m => {
+    m.date = addDaysToDateStr(m.date, days);
+  });
+
+  closeModals();
+  renderAll(false);
+};
+
 function closeModals() {
   document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
 }
 
 // Save & Export
-// This is now a manual OFFLINE backup only. Day-to-day cross-device sync
-// happens automatically via pushToCloud()/pullFromCloud() further down.
 async function downloadHtmlBackup() {
   saveToLocalStorage(); // stamps store.savedAt
 
@@ -3063,17 +3115,12 @@ async function downloadHtmlBackup() {
   btn.textContent = 'Saving…';
 
   try {
-    // Grab the page's own current HTML source. Fetching location.href (with
-    // cache-busting) gets the pristine file as served, so we don't have to
-    // worry about the live DOM having drifted from the original markup.
     let html;
     try {
       const res = await fetch(location.href.split('#')[0].split('?')[0] + '?_=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) throw new Error('fetch failed');
       html = await res.text();
     } catch (fetchErr) {
-      // Fallback for contexts where self-fetch isn't possible (e.g. file://):
-      // reconstruct from the live DOM instead.
       html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
     }
 
@@ -3091,8 +3138,6 @@ async function downloadHtmlBackup() {
     const after = html.slice(endIdx);
     const newHtml = before + dataJson + after;
 
-    // Figure out a sensible filename: reuse whatever this file is currently
-    // called so re-uploading it overwrites the same file on Cloudflare.
     let filename = 'index.html';
     const pathParts = location.pathname.split('/').filter(Boolean);
     if (pathParts.length && pathParts[pathParts.length - 1].endsWith('.html')) {
