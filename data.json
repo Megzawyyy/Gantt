@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1791796172500",
+  "activeProjectId": "proj_1791796219529",
   "projects": [
     {
       "id": "proj_scct_automation",
@@ -575,7 +575,23 @@
       ],
       "items": [],
       "milestones": []
+    },
+    {
+      "id": "proj_1791796219529",
+      "title": "Sumitomo",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796219529",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": []
     }
   ],
-  "savedAt": 1791796172500
+  "savedAt": 1791796219529
 }
