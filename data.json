@@ -41,7 +41,7 @@
           "type": "payment",
           "title": "Panel Deal (DP to Infinity)",
           "assignee": "Infinity Electric",
-          "status": "planned",
+          "status": "paid",
           "amount": 3500,
           "flowType": "outflow",
           "color": "phase",
@@ -433,5 +433,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791795428692
+  "savedAt": 1791795814873
 }
