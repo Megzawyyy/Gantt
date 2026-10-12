@@ -443,7 +443,7 @@
           "type": "task",
           "title": "Panels Installation",
           "assignee": "Contractor",
-          "status": "planned",
+          "status": "in progress",
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
@@ -710,5 +710,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791801522506
+  "savedAt": 1791801548218
 }
