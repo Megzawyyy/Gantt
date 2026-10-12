@@ -519,7 +519,7 @@
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    /* REMOVED scroll-behavior: smooth; to fix JS scroll desync */
   }
 
   .phase-side-item {
@@ -581,11 +581,10 @@
     overflow: auto;
     cursor: grab;
     user-select: none;
-    scroll-behavior: smooth;
+    /* REMOVED scroll-behavior: smooth; to fix JS scroll desync */
   }
   .timeline-panel.is-panning {
     cursor: grabbing !important;
-    scroll-behavior: auto !important;
   }
 
   .timeline-header {
@@ -1981,7 +1980,7 @@ function renderAll(keepScrollPosition = false) {
   if (keepScrollPosition && timelinePanel) {
     timelinePanel.scrollLeft = prevScrollLeft;
     timelinePanel.scrollTop = prevScrollTop;
-    document.getElementById('phasesScrollContainer').scrollTop = prevScrollTop;
+    // Removing programmatic phase scroll set here to prevent double triggering.
   }
 }
 
@@ -2107,7 +2106,6 @@ function renderProjectsList() {
     const item = document.createElement('div');
     item.className = `project-item ${p.id === store.activeProjectId ? 'active' : ''} ${customClass}`;
     
-    // Using simple HTML up/down buttons on the far left that are safe for all devices.
     item.innerHTML = `
       <div style="display: flex; align-items: center; gap: 6px;">
         <div style="display: flex; flex-direction: column; gap: 2px;">
@@ -2272,18 +2270,28 @@ function renderSidebar(project) {
   });
 }
 
-// Synchronized Scrolling
+// Synchronized Scrolling logic
 const phasesScroll = document.getElementById('phasesScrollContainer');
 const timelinePanel = document.getElementById('timelinePanel');
 
+let isSyncingPhases = false;
+let isSyncingTimeline = false;
+
 timelinePanel.addEventListener('scroll', () => {
-  phasesScroll.scrollTop = timelinePanel.scrollTop;
+  if (!isSyncingTimeline) {
+    isSyncingPhases = true;
+    phasesScroll.scrollTop = timelinePanel.scrollTop;
+  }
+  isSyncingTimeline = false;
 });
 
-phasesScroll.addEventListener('wheel', (e) => {
-  timelinePanel.scrollTop += e.deltaY;
-  e.preventDefault();
-}, { passive: false });
+phasesScroll.addEventListener('scroll', () => {
+  if (!isSyncingPhases) {
+    isSyncingTimeline = true;
+    timelinePanel.scrollTop = phasesScroll.scrollTop;
+  }
+  isSyncingPhases = false;
+});
 
 // Mouse Pan
 let isMousePanning = false;
@@ -2735,11 +2743,6 @@ function focusOnItem(itemId) {
     behavior: 'smooth'
   });
 
-  phasesScroll.scrollTo({
-    top: targetScrollTop,
-    behavior: 'smooth'
-  });
-
   el.classList.remove('search-focus');
   void el.offsetWidth;
   el.classList.add('search-focus');
@@ -2776,11 +2779,6 @@ function focusOnPhase(phaseId) {
 
   timelinePanel.scrollTo({
     left: targetScrollLeft,
-    top: targetScrollTop,
-    behavior: 'smooth'
-  });
-
-  phasesScroll.scrollTo({
     top: targetScrollTop,
     behavior: 'smooth'
   });
@@ -2947,8 +2945,8 @@ function openNewItemModal(phaseId, defaultType = 'task') {
     amount: 0,
     flowType: 'inflow',
     color: 'phase',
-    start: '2026-09-16',
-    end: '2026-09-23',
+    start: formatDate(new Date()),
+    end: formatDate(new Date(Date.now() + 7 * DAY_MS)),
     note: '',
     dependsOn: []
   };
