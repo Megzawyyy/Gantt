@@ -125,13 +125,28 @@
     background: rgba(255,255,255,0.15);
   }
 
+  /* --- Manual Project Type Colors --- */
+  .project-item.proj-aveva { background: #eff4f9; border-color: #d8e4f0; }
+  .project-item.proj-aveva:hover { border-color: var(--accent-blue); }
+  
+  .project-item.proj-plc { background: #f0f6f0; border-color: #dce7dc; }
+  .project-item.proj-plc:hover { border-color: var(--accent-green); }
+  
+  .project-item.proj-aveva-plc { background: linear-gradient(135deg, #eff4f9 0%, #f0f6f0 100%); border-color: #dce7dc; }
+  .project-item.proj-aveva-plc:hover { border-color: var(--accent-blue); }
+
+  .project-item.proj-aveva.active { background: var(--accent-blue); color: #fff; border-color: var(--accent-blue); }
+  .project-item.proj-plc.active { background: var(--accent-green); color: #fff; border-color: var(--accent-green); }
+  .project-item.proj-aveva-plc.active { background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%); color: #fff; border-color: transparent; }
+  /* ------------------------------------------ */
+
   .project-item-title {
     font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 135px;
+    max-width: 120px; /* Reduced slightly to fit the new button */
   }
 
   /* Main Area */
@@ -1112,6 +1127,34 @@
   </div>
 </div>
 
+<!-- PROJECT TYPE MODAL -->
+<div class="modal-overlay" id="projectTypeModal">
+  <div class="modal-card" style="width: 320px;">
+    <div class="modal-header">
+      <h4><span>🏷️</span> Project Category</h4>
+      <button class="close-btn" onclick="closeModals()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.4;">
+        Select a category to apply custom highlighting to this project in your sidebar list.
+      </p>
+      <div class="form-group">
+        <label>Type</label>
+        <select id="projectTypeSelect">
+          <option value="general">General (Default)</option>
+          <option value="aveva">AVEVA</option>
+          <option value="plc">PLC</option>
+          <option value="aveva-plc">AVEVA + PLC</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button onclick="closeModals()">Cancel</button>
+      <button class="btn-primary" id="saveProjectTypeBtn">Save</button>
+    </div>
+  </div>
+</div>
+
 <!-- PHASE EDIT MODAL -->
 <div class="modal-overlay" id="phaseEditModal">
   <div class="modal-card">
@@ -1364,6 +1407,7 @@ const defaultData = {
     {
       id: "proj_scct_automation",
       title: "SCCT Control & Automation",
+      projectType: "aveva-plc", // Added property for explicit category selection
       startDate: "2026-08-03",
       daysCount: 180,
       currency: "EGP",
@@ -2025,11 +2069,17 @@ function renderProjectsList() {
   list.innerHTML = '';
 
   store.projects.forEach(p => {
+    // Check custom type or fallback to general
+    const pType = p.projectType || 'general';
+    const customClass = pType !== 'general' ? `proj-${pType}` : '';
+
     const item = document.createElement('div');
-    item.className = `project-item ${p.id === store.activeProjectId ? 'active' : ''}`;
+    item.className = `project-item ${p.id === store.activeProjectId ? 'active' : ''} ${customClass}`;
+    
     item.innerHTML = `
       <span class="project-item-title">${p.title}</span>
       <div style="display: flex; gap: 2px;">
+        <button class="icon-btn type-p-btn" title="Set Project Type">🏷️</button>
         <button class="icon-btn edit-p-btn" title="Rename Project">✎</button>
         <button class="icon-btn del-p-btn" title="Delete Project">✕</button>
       </div>
@@ -2041,6 +2091,11 @@ function renderProjectsList() {
         saveToLocalStorage();
         renderAll(false);
       }
+    };
+
+    item.querySelector('.type-p-btn').onclick = (e) => {
+      e.stopPropagation();
+      openProjectTypeModal(p.id);
     };
 
     item.querySelector('.edit-p-btn').onclick = (e) => {
@@ -2081,6 +2136,7 @@ document.getElementById('addNewProjectBtn').onclick = () => {
   store.projects.push({
     id: newProjId,
     title: name.trim(),
+    projectType: 'general',
     startDate: "2026-08-03",
     daysCount: 180,
     currency: "EGP",
@@ -2733,8 +2789,29 @@ function attachItemInteractions(el, item, project) {
 }
 
 // ==========================================
-// --- MODALS (PHASE, ITEM, MILESTONE, SHIFT) ---
+// --- MODALS (PHASE, ITEM, MILESTONE, SHIFT, TYPE) ---
 // ==========================================
+let activeEditProjectTypeId = null;
+function openProjectTypeModal(projId) {
+  closeModals();
+  const p = store.projects.find(x => x.id === projId);
+  if (!p) return;
+  activeEditProjectTypeId = projId;
+  document.getElementById('projectTypeSelect').value = p.projectType || 'general';
+  document.getElementById('projectTypeModal').classList.add('active');
+}
+
+document.getElementById('saveProjectTypeBtn').onclick = () => {
+  if (!activeEditProjectTypeId) return;
+  const p = store.projects.find(x => x.id === activeEditProjectTypeId);
+  if (p) {
+    recordState();
+    p.projectType = document.getElementById('projectTypeSelect').value;
+    renderAll(true);
+  }
+  closeModals();
+};
+
 document.getElementById('addNewPhaseBtn').onclick = () => {
   const name = prompt('New Phase Name:', 'New Phase');
   if (!name || !name.trim()) return;
@@ -2771,7 +2848,7 @@ document.getElementById('savePhaseEditBtn').onclick = () => {
   phase.color = document.getElementById('phaseEditColor').value;
   closeModals();
   renderAll(true);
-};
+}
 
 document.getElementById('deletePhaseFromModalBtn').onclick = () => {
   if (activeEditPhaseId) {
@@ -3351,4 +3428,3 @@ setInterval(() => { if (!isPushing) pullFromCloud(); }, 30000);
 </script>
 </body>
 </html>
-////
