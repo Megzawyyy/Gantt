@@ -146,7 +146,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 105px;
+    max-width: 95px; /* Leaves room for buttons & new ribbon */
   }
 
   /* Main Area */
@@ -2073,6 +2073,11 @@ function renderProjectsList() {
     const pType = p.projectType || 'general';
     const customClass = pType !== 'general' ? `proj-${pType}` : '';
 
+    let ribbonBg = 'transparent';
+    if (pType === 'aveva') ribbonBg = '#3e1152';
+    else if (pType === 'plc') ribbonBg = '#009530';
+    else if (pType === 'aveva-plc') ribbonBg = 'linear-gradient(180deg, #3e1152 0%, #009530 100%)';
+
     const item = document.createElement('div');
     item.className = `project-item ${p.id === store.activeProjectId ? 'active' : ''} ${customClass}`;
     
@@ -2083,6 +2088,7 @@ function renderProjectsList() {
           <button class="icon-btn move-up-p-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === 0 ? '0' : '0.6'}; pointer-events: ${index === 0 ? 'none' : 'auto'};" title="Move Up">▲</button>
           <button class="icon-btn move-down-p-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === store.projects.length - 1 ? '0' : '0.6'}; pointer-events: ${index === store.projects.length - 1 ? 'none' : 'auto'};" title="Move Down">▼</button>
         </div>
+        ${pType !== 'general' ? `<div style="width: 4px; height: 16px; border-radius: 2px; background: ${ribbonBg}; flex-shrink: 0;" title="${pType.toUpperCase()}"></div>` : ''}
         <span class="project-item-title" title="${p.title}">${p.title}</span>
       </div>
       <div style="display: flex; gap: 2px;">
