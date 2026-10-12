@@ -399,7 +399,7 @@
         }
       ],
       "milestones": [],
-      "projectType": "aveva"
+      "projectType": "general"
     },
     {
       "id": "proj_1790241270438",
@@ -660,5 +660,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791797582619
+  "savedAt": 1791797585861
 }
