@@ -403,7 +403,7 @@
     {
       "id": "proj_1790241270438",
       "title": "SCCT RMU",
-      "startDate": "2026-08-03",
+      "startDate": "2026-07-24",
       "daysCount": 180,
       "currency": "EGP",
       "phases": [
@@ -424,8 +424,8 @@
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
-          "start": "2026-10-13",
-          "end": "2026-10-20",
+          "start": "2026-10-03",
+          "end": "2026-10-10",
           "note": "",
           "dependsOn": []
         }
@@ -657,5 +657,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791796858911
+  "savedAt": 1791796869793
 }
