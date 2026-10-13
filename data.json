@@ -26,21 +26,6 @@
       ],
       "items": [
         {
-          "id": "it_1791801349785",
-          "phaseId": "p_1790245543932",
-          "type": "task",
-          "title": "Panels Installation",
-          "assignee": "Contractor",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-13",
-          "end": "2026-11-13",
-          "note": "",
-          "dependsOn": []
-        },
-        {
           "id": "it_1791801404791",
           "phaseId": "p_1790245543932",
           "type": "task",
@@ -52,6 +37,21 @@
           "color": "phase",
           "start": "2026-10-13",
           "end": "2026-10-20",
+          "note": "",
+          "dependsOn": []
+        },
+        {
+          "id": "it_1791801349785",
+          "phaseId": "p_1790245543932",
+          "type": "task",
+          "title": "Panels Installation",
+          "assignee": "Contractor",
+          "status": "planned",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-13",
+          "end": "2026-11-13",
           "note": "",
           "dependsOn": []
         },
@@ -880,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791875855158
+  "savedAt": 1791875872060
 }
