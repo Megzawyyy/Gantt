@@ -644,7 +644,7 @@
       "title": "SCCT RMU",
       "startDate": "2026-07-24",
       "daysCount": 180,
-      "currency": "EGP",
+      "currency": "USD",
       "phases": [
         {
           "id": "p_1790241270438",
@@ -878,5 +878,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791880941007
+  "savedAt": 1791881234682
 }
