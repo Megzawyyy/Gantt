@@ -22,6 +22,11 @@
           "id": "p_1791802828980",
           "name": "Preprations",
           "color": "#9d7db8"
+        },
+        {
+          "id": "p_1791873253291",
+          "name": "New Phase",
+          "color": "#d9824b"
         }
       ],
       "items": [
@@ -880,5 +885,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791873247135
+  "savedAt": 1791873253291
 }
