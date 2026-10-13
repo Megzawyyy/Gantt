@@ -1,5 +1,5 @@
 {
-  "activeProjectId": "proj_1790245543932",
+  "activeProjectId": "proj_scct_automation",
   "projects": [
     {
       "id": "proj_1790245543932",
@@ -880,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791873295145
+  "savedAt": 1791873297062
 }
