@@ -178,21 +178,6 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791801911117",
-          "phaseId": "p_1791801346901",
-          "type": "payment",
-          "title": "SAT",
-          "assignee": "ACS / Consultant",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-16",
-          "end": "2026-10-23",
-          "note": "",
-          "dependsOn": []
-        },
-        {
           "id": "it_1791802836626",
           "phaseId": "p_1791802828980",
           "type": "task",
@@ -895,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791875920398
+  "savedAt": 1791875923768
 }
