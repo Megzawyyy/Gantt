@@ -582,7 +582,7 @@
           "phaseId": "p_1791802828980",
           "type": "task",
           "title": "GUI Concept design",
-          "assignee": "",
+          "assignee": "ACS",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -880,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791880407434
+  "savedAt": 1791880662515
 }
