@@ -897,7 +897,7 @@
     {
       "id": "proj_1791876033681",
       "title": "Zed East",
-      "projectType": "general",
+      "projectType": "plc",
       "startDate": "2026-08-03",
       "daysCount": 180,
       "currency": "EGP",
@@ -912,5 +912,5 @@
       "milestones": []
     }
   ],
-  "savedAt": 1791876033681
+  "savedAt": 1791876039656
 }
