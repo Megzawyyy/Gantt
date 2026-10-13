@@ -657,9 +657,9 @@
           "id": "it_1791881509567",
           "phaseId": "p_1790241270438",
           "type": "task",
-          "title": "New Task",
+          "title": "Send offer",
           "assignee": "",
-          "status": "planned",
+          "status": "done",
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
@@ -894,5 +894,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791881509567
+  "savedAt": 1791881519356
 }
