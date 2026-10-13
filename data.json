@@ -9,6 +9,11 @@
       "currency": "EGP",
       "phases": [
         {
+          "id": "p_1791802828980",
+          "name": "Preprations",
+          "color": "#9d7db8"
+        },
+        {
           "id": "p_1791801346901",
           "name": "Closing",
           "color": "#82a86d"
@@ -17,11 +22,6 @@
           "id": "p_1790245543932",
           "name": "Engineering",
           "color": "#6c8ebf"
-        },
-        {
-          "id": "p_1791802828980",
-          "name": "Preprations",
-          "color": "#9d7db8"
         }
       ],
       "items": [
@@ -880,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791875843984
+  "savedAt": 1791875848500
 }
