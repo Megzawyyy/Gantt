@@ -146,7 +146,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 95px; /* Leaves room for buttons & new ribbon */
+    max-width: 95px;
   }
 
   /* Main Area */
@@ -519,7 +519,6 @@
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    /* REMOVED scroll-behavior: smooth; to fix JS scroll desync */
   }
 
   .phase-side-item {
@@ -550,7 +549,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 140px;
+    max-width: 110px;
   }
 
   .color-dot {
@@ -581,7 +580,6 @@
     overflow: auto;
     cursor: grab;
     user-select: none;
-    /* REMOVED scroll-behavior: smooth; to fix JS scroll desync */
   }
   .timeline-panel.is-panning {
     cursor: grabbing !important;
@@ -2106,6 +2104,7 @@ function renderProjectsList() {
     const item = document.createElement('div');
     item.className = `project-item ${p.id === store.activeProjectId ? 'active' : ''} ${customClass}`;
     
+    // Using simple HTML up/down buttons on the far left that are safe for all devices.
     item.innerHTML = `
       <div style="display: flex; align-items: center; gap: 6px;">
         <div style="display: flex; flex-direction: column; gap: 2px;">
@@ -2237,7 +2236,7 @@ function renderSidebar(project) {
   sb.innerHTML = '';
   const curr = project.currency || "EGP";
 
-  (project.phases || []).forEach((phase) => {
+  (project.phases || []).forEach((phase, index) => {
     const pItems = (project.items || []).filter(t => t.phaseId === phase.id);
     const tasksCount = pItems.filter(x => x.type !== 'payment').length;
     const payments = pItems.filter(x => x.type === 'payment');
@@ -2250,22 +2249,48 @@ function renderSidebar(project) {
     item.style.height = `${rowCount * ROW_HEIGHT}px`;
 
     item.innerHTML = `
-      <div class="phase-side-info" onclick="openPhaseOverview('${phase.id}')">
-        <span class="color-dot" style="background: ${phase.color}" title="Edit phase"></span>
-        <div>
-          <div class="phase-title-text" title="${phase.name}">${phase.name}</div>
-          <div style="font-size: 10.5px; color: var(--text-secondary);">
-            ${tasksCount} tasks · ${payments.length} payments
-            ${payments.length > 0 ? `· <strong>${formatCurrency(paymentSum, curr)}</strong>` : ''}
+      <div style="display: flex; align-items: center; gap: 8px; flex-grow: 1; min-width: 0;">
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-shrink: 0;">
+          <button class="icon-btn move-up-ph-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === 0 ? '0.2' : '0.7'}; pointer-events: ${index === 0 ? 'none' : 'auto'};" title="Move Up">▲</button>
+          <button class="icon-btn move-down-ph-btn" style="padding: 0; font-size: 9px; line-height: 1; height: 12px; opacity: ${index === project.phases.length - 1 ? '0.2' : '0.7'}; pointer-events: ${index === project.phases.length - 1 ? 'none' : 'auto'};" title="Move Down">▼</button>
+        </div>
+        <div class="phase-side-info" onclick="openPhaseOverview('${phase.id}')" style="cursor: pointer; flex-grow: 1; min-width: 0; display: flex; align-items: center; gap: 8px;">
+          <span class="color-dot" style="background: ${phase.color}" title="Edit phase"></span>
+          <div style="min-width: 0;">
+            <div class="phase-title-text" title="${phase.name}">${phase.name}</div>
+            <div style="font-size: 10.5px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              ${tasksCount} tasks · ${payments.length} payments
+              ${payments.length > 0 ? `· <strong>${formatCurrency(paymentSum, curr)}</strong>` : ''}
+            </div>
           </div>
         </div>
       </div>
-      <div>
+      <div style="display: flex; gap: 2px; flex-shrink: 0;">
         <button class="icon-btn" onclick="openPhaseEditModal('${phase.id}')" title="Rename/Edit Phase">✎</button>
         <button class="icon-btn" onclick="openNewItemModal('${phase.id}')" title="Add Task or Payment">+</button>
         <button class="icon-btn" onclick="deletePhase('${phase.id}')" title="Delete Phase">✕</button>
       </div>
     `;
+
+    // Reorder Phase Logic
+    item.querySelector('.move-up-ph-btn').onclick = (e) => {
+      e.stopPropagation();
+      if (index > 0) {
+        recordState();
+        [project.phases[index - 1], project.phases[index]] = [project.phases[index], project.phases[index - 1]];
+        renderAll(true);
+      }
+    };
+
+    item.querySelector('.move-down-ph-btn').onclick = (e) => {
+      e.stopPropagation();
+      if (index < project.phases.length - 1) {
+        recordState();
+        [project.phases[index + 1], project.phases[index]] = [project.phases[index], project.phases[index + 1]];
+        renderAll(true);
+      }
+    };
+
     sb.appendChild(item);
   });
 }
@@ -3029,7 +3054,7 @@ function openEditItemModal(itemId) {
       const el = document.createElement('div');
       el.className = `depends-item ${currentItemDepends.includes(other.id) ? 'selected' : ''}`;
       const prefix = other.type === 'payment' ? '💵 ' : '📋 ';
-      el.innerHTML = `<span>${prefix}${other.title}</span><small style="opacity:0.7;">${other.type === 'payment' ? formatCurrency(other.amount, curr) : other.status}</small>`;
+      el.innerHTML = `<span>${prefix}${other.title}</span><small style="opacity:0.7;">${other.type === 'payment' ? formatCurrency(other.amount, curr) : getStatusDisplay(other)}</small>`;
       el.onclick = () => {
         if (currentItemDepends.includes(other.id)) {
           currentItemDepends = currentItemDepends.filter(id => id !== other.id);
