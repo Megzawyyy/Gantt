@@ -426,21 +426,6 @@
       ],
       "items": [
         {
-          "id": "it_1791801404791",
-          "phaseId": "p_1790245543932",
-          "type": "task",
-          "title": "SOO Preparation",
-          "assignee": "",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-13",
-          "end": "2026-10-20",
-          "note": "",
-          "dependsOn": []
-        },
-        {
           "id": "it_1791801349785",
           "phaseId": "p_1790245543932",
           "type": "task",
@@ -461,6 +446,21 @@
           "type": "task",
           "title": "Cabling",
           "assignee": "Contractor",
+          "status": "planned",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-13",
+          "end": "2026-10-20",
+          "note": "",
+          "dependsOn": []
+        },
+        {
+          "id": "it_1791801404791",
+          "phaseId": "p_1790245543932",
+          "type": "task",
+          "title": "SOO Preparation",
+          "assignee": "",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -878,5 +878,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791880880879
+  "savedAt": 1791880889921
 }
