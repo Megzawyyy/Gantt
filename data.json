@@ -612,7 +612,7 @@
           "phaseId": "p_1791802828980",
           "type": "task",
           "title": "HMI Software",
-          "assignee": "",
+          "assignee": "ACS",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -880,5 +880,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791880667105
+  "savedAt": 1791880671313
 }
