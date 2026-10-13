@@ -893,24 +893,7 @@
       "items": [],
       "milestones": [],
       "projectType": "aveva"
-    },
-    {
-      "id": "proj_1791876033681",
-      "title": "Zed East",
-      "projectType": "plc",
-      "startDate": "2026-08-03",
-      "daysCount": 180,
-      "currency": "EGP",
-      "phases": [
-        {
-          "id": "p_1791876033681",
-          "name": "Phase 1",
-          "color": "#6c8ebf"
-        }
-      ],
-      "items": [],
-      "milestones": []
     }
   ],
-  "savedAt": 1791876041766
+  "savedAt": 1791876051411
 }
