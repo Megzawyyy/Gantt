@@ -456,11 +456,11 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791801404791",
+          "id": "it_1791801610289",
           "phaseId": "p_1790245543932",
           "type": "task",
-          "title": "SOO Preparation",
-          "assignee": "",
+          "title": "Loop Check",
+          "assignee": "ACS",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -471,11 +471,11 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791801610289",
+          "id": "it_1791801404791",
           "phaseId": "p_1790245543932",
           "type": "task",
-          "title": "Loop Check",
-          "assignee": "ACS",
+          "title": "SOO Preparation",
+          "assignee": "",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -878,5 +878,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791880889921
+  "savedAt": 1791880891822
 }
