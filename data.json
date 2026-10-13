@@ -652,7 +652,23 @@
           "color": "#6c8ebf"
         }
       ],
-      "items": [],
+      "items": [
+        {
+          "id": "it_1791881509567",
+          "phaseId": "p_1790241270438",
+          "type": "task",
+          "title": "New Task",
+          "assignee": "",
+          "status": "planned",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-13",
+          "end": "2026-10-20",
+          "note": "",
+          "dependsOn": []
+        }
+      ],
       "milestones": [],
       "projectType": "plc"
     },
@@ -878,5 +894,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791881504573
+  "savedAt": 1791881509567
 }
