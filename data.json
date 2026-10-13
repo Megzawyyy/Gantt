@@ -240,8 +240,8 @@
         {
           "id": "it_1791875910691",
           "phaseId": "p_1790245543932",
-          "type": "task",
-          "title": "New Task",
+          "type": "payment",
+          "title": "SAT",
           "assignee": "",
           "status": "planned",
           "amount": 0,
@@ -895,5 +895,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791875910690
+  "savedAt": 1791875920398
 }
