@@ -648,7 +648,7 @@
       "phases": [
         {
           "id": "p_1790241270438",
-          "name": "Phase 1",
+          "name": "Offering",
           "color": "#6c8ebf"
         }
       ],
@@ -878,5 +878,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791881497069
+  "savedAt": 1791881504573
 }
