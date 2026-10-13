@@ -236,6 +236,21 @@
           "end": "2026-10-20",
           "note": "",
           "dependsOn": []
+        },
+        {
+          "id": "it_1791875947069",
+          "phaseId": "p_1791801346901",
+          "type": "task",
+          "title": "New Task",
+          "assignee": "",
+          "status": "planned",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-13",
+          "end": "2026-10-20",
+          "note": "",
+          "dependsOn": []
         }
       ],
       "milestones": [],
@@ -880,5 +895,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791875930173
+  "savedAt": 1791875947069
 }
