@@ -665,7 +665,7 @@
           "color": "phase",
           "start": "2026-09-20",
           "end": "2026-09-30",
-          "note": "",
+          "note": "Offer sent SEP, 20th",
           "dependsOn": []
         }
       ],
@@ -894,5 +894,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791881578643
+  "savedAt": 1791881598825
 }
