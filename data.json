@@ -669,9 +669,9 @@
           "id": "it_1791968087284",
           "phaseId": "p_1791802828980",
           "type": "task",
-          "title": "New Task",
+          "title": "Instrumentation List",
           "assignee": "",
-          "status": "planned",
+          "status": "in progress",
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
@@ -939,5 +939,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791968087284
+  "savedAt": 1791968111563
 }
