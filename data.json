@@ -837,23 +837,6 @@
       "projectType": "aveva-plc"
     },
     {
-      "id": "proj_1791796168121",
-      "title": "SCCT PH1,2",
-      "startDate": "2026-08-03",
-      "daysCount": 180,
-      "currency": "EGP",
-      "phases": [
-        {
-          "id": "p_1791796168121",
-          "name": "Phase 1",
-          "color": "#6c8ebf"
-        }
-      ],
-      "items": [],
-      "milestones": [],
-      "projectType": "aveva"
-    },
-    {
       "id": "proj_1791796172500",
       "title": "SCCT PH3",
       "startDate": "2026-08-03",
@@ -869,6 +852,23 @@
       "items": [],
       "milestones": [],
       "projectType": "aveva-plc"
+    },
+    {
+      "id": "proj_1791796168121",
+      "title": "SCCT PH1,2",
+      "startDate": "2026-08-03",
+      "daysCount": 180,
+      "currency": "EGP",
+      "phases": [
+        {
+          "id": "p_1791796168121",
+          "name": "Phase 1",
+          "color": "#6c8ebf"
+        }
+      ],
+      "items": [],
+      "milestones": [],
+      "projectType": "aveva"
     },
     {
       "id": "proj_1791796219529",
@@ -939,5 +939,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791968445472
+  "savedAt": 1791974021910
 }
