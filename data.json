@@ -627,7 +627,7 @@
           "title": "SAT",
           "assignee": "",
           "status": "planned",
-          "amount": 0,
+          "amount": 1000,
           "flowType": "inflow",
           "color": "phase",
           "start": "2026-10-13",
@@ -894,5 +894,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791963740700
+  "savedAt": 1791963751579
 }
