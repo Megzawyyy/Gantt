@@ -656,6 +656,21 @@
           "type": "task",
           "title": "I/O List",
           "assignee": "",
+          "status": "in progress",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-14",
+          "end": "2026-10-21",
+          "note": "",
+          "dependsOn": []
+        },
+        {
+          "id": "it_1791968087284",
+          "phaseId": "p_1791802828980",
+          "type": "task",
+          "title": "New Task",
+          "assignee": "",
           "status": "planned",
           "amount": 0,
           "flowType": "inflow",
@@ -924,5 +939,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791968079645
+  "savedAt": 1791968087284
 }
