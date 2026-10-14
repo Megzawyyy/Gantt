@@ -591,10 +591,10 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791802862644",
+          "id": "it_1791802882330",
           "phaseId": "p_1791802828980",
           "type": "task",
-          "title": "PLC Software",
+          "title": "HMI Software",
           "assignee": "ACS",
           "status": "planned",
           "amount": 0,
@@ -606,10 +606,10 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791802882330",
+          "id": "it_1791802862644",
           "phaseId": "p_1791802828980",
           "type": "task",
-          "title": "HMI Software",
+          "title": "PLC Software",
           "assignee": "ACS",
           "status": "planned",
           "amount": 0,
@@ -894,5 +894,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791967978887
+  "savedAt": 1791967982159
 }
