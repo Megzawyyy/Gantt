@@ -576,21 +576,6 @@
           "dependsOn": []
         },
         {
-          "id": "it_1791802836626",
-          "phaseId": "p_1791802828980",
-          "type": "task",
-          "title": "GUI Concept design",
-          "assignee": "ACS",
-          "status": "planned",
-          "amount": 0,
-          "flowType": "inflow",
-          "color": "phase",
-          "start": "2026-10-13",
-          "end": "2026-10-21",
-          "note": "",
-          "dependsOn": []
-        },
-        {
           "id": "it_1791802862644",
           "phaseId": "p_1791802828980",
           "type": "task",
@@ -602,6 +587,21 @@
           "color": "phase",
           "start": "2026-10-13",
           "end": "2026-10-20",
+          "note": "",
+          "dependsOn": []
+        },
+        {
+          "id": "it_1791802836626",
+          "phaseId": "p_1791802828980",
+          "type": "task",
+          "title": "GUI Concept design",
+          "assignee": "ACS",
+          "status": "planned",
+          "amount": 0,
+          "flowType": "inflow",
+          "color": "phase",
+          "start": "2026-10-13",
+          "end": "2026-10-21",
           "note": "",
           "dependsOn": []
         },
@@ -894,5 +894,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791967565941
+  "savedAt": 1791967965316
 }
