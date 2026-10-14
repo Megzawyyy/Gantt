@@ -641,7 +641,7 @@
           "type": "task",
           "title": "Cable recommendation",
           "assignee": "",
-          "status": "in progress",
+          "status": "done",
           "amount": 0,
           "flowType": "inflow",
           "color": "phase",
@@ -939,5 +939,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791968139861
+  "savedAt": 1791968149097
 }
