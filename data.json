@@ -639,7 +639,7 @@
           "id": "it_1791968036640",
           "phaseId": "p_1791802828980",
           "type": "task",
-          "title": "Cable list",
+          "title": "Cable recommendation",
           "assignee": "",
           "status": "in progress",
           "amount": 0,
@@ -924,5 +924,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1791968069155
+  "savedAt": 1791968079645
 }
