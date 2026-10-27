@@ -709,7 +709,7 @@
           "flowType": "inflow",
           "color": "phase",
           "start": "2026-09-20",
-          "end": "2026-09-20",
+          "end": "2026-09-21",
           "note": "Offer sent Sep, 20th",
           "dependsOn": []
         }
@@ -939,5 +939,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1793097659455
+  "savedAt": 1793097667637
 }
