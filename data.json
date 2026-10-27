@@ -828,7 +828,7 @@
       "phases": [
         {
           "id": "p_1791796134235",
-          "name": "Phase 1",
+          "name": "SCADA",
           "color": "#6c8ebf"
         }
       ],
@@ -939,5 +939,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1793097695996
+  "savedAt": 1793097706506
 }
