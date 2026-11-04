@@ -830,11 +830,6 @@
           "id": "p_1791796134235",
           "name": "SCADA",
           "color": "#6c8ebf"
-        },
-        {
-          "id": "p_1793097899319",
-          "name": "PLC",
-          "color": "#82a86d"
         }
       ],
       "items": [
@@ -960,5 +955,5 @@
       "projectType": "aveva"
     }
   ],
-  "savedAt": 1793097899319
+  "savedAt": 1793793360083
 }
